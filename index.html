@@ -1,10 +1,98 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olivia Morris | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; line-height: 1.6; background: #f9f9f9; color: #222; }
+    a { text-decoration: none; color: inherit; }
+
+    header { text-align: center; padding: 4rem 1rem 3rem; background: #fff; }
+    header h1 { font-size: 2.5rem; font-weight: 600; margin-bottom: 0.5rem; }
+    header p { font-size: 1.2rem; color: #555; margin-bottom: 1.5rem; }
+    header .buttons a { display: inline-block; margin: 0.3rem; padding: 0.7rem 1.5rem; background: #111; color: #fff; border-radius: 5px; transition: 0.3s; }
+    header .buttons a:hover { background: #333; }
+
+    main { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+    section { margin-bottom: 3rem; }
+    h2 { font-size: 1.8rem; margin-bottom: 1rem; border-left: 4px solid #111; padding-left: 0.5rem; }
+
+    .skills { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .skills span { background: #eee; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.95rem; }
+
+    .portfolio { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; }
+    .portfolio-item { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.05); transition: transform 0.3s ease; }
+    .portfolio-item:hover { transform: translateY(-4px); }
+    .portfolio-item img { width: 100%; display: block; }
+    .portfolio-item a { display: block; padding: 1rem; text-decoration: none; color: #111; font-weight: 600; }
+
+    footer { text-align: center; padding: 2rem 1rem; background: #fff; color: #777; font-size: 0.9rem; border-top: 1px solid #eee; }
+  </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>Welcome to my website.</p>
+
+  <header>
+    <h1>Hello World! I'm Olivia Morris</h1>
+    <p>Professional Portfolio | Resume & Work Samples</p>
+    <div class="buttons">
+      <a href="resume.pdf" target="_blank">View Resume</a>
+      <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank">LinkedIn</a>
+      <a href="mailto:olivia@example.com">Email Me</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hello! I'm Olivia Morris, a professional eager to contribute my skills to impactful projects. My expertise spans communication, content creation, and project management. Below, you'll find my core skills and selected work samples.</p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills">
+        <span>Social Media Strategy</span>
+        <span>Content Writing</span>
+        <span>Data Annotation</span>
+        <span>Research</span>
+        <span>Project Coordination</span>
+        <span>Adobe Creative Suite</span>
+        <span>Canva</span>
+        <span>Microsoft Office</span>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <h2>Portfolio</h2>
+      <div class="portfolio">
+        <!-- Portfolio Item Example -->
+        <div class="portfolio-item">
+          <img src="thumbnail1.jpg" alt="Project Sample 1">
+          <a href="sample1.pdf" target="_blank">Project Sample 1</a>
+        </div>
+        <div class="portfolio-item">
+          <img src="thumbnail2.jpg" alt="Project Sample 2">
+          <a href="sample2.pdf" target="_blank">Project Sample 2</a>
+        </div>
+        <div class="portfolio-item">
+          <img src="thumbnail3.jpg" alt="Project Sample 3">
+          <a href="sample3.pdf" target="_blank">Project Sample 3</a>
+        </div>
+      </div>
+      <p style="margin-top:1rem; color:#555; font-size:0.9rem;">*To add more portfolio items: copy one of the above divs, update the thumbnail image and PDF link, and commit changes in GitHub.*</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>If you'd like to get in touch, please email me at <a href="mailto:olivia@example.com">olivia@example.com</a> or connect with me on <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank">LinkedIn</a>.</p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Olivia Morris. All rights reserved.
+  </footer>
+
 </body>
 </html>
