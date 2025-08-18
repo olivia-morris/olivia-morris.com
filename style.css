@@ -1,17 +1,1 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #fafafa;
-}
 
-.profile-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #ccc;
-}
-
-footer a {
-  text-decoration: underline;
-  color: inherit;
-}
