@@ -1,8 +1,8 @@
 .profile-photo {
-  width: 300px;          /* Increase size (try 250–350px) */
-  height: 300px;         /* Must match width to be circular */
-  border-radius: 50%;    /* Rounds it into a circle */
-  object-fit: cover;     /* Crops edges so it fills the circle */
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
   display: block;
-  margin: 20px auto;     /* Centers it horizontally */
+  margin: 20px auto;
 }
