@@ -1,4 +1,4 @@
 footer a {
-  text-decoration: underline;  /* makes the link underlined */
-  color: inherit;              /* keeps the same color as your text */
+  text-decoration: underline;
+  color: inherit; /* keeps text color consistent */
 }
