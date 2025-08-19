@@ -1,8 +1,9 @@
 .profile-photo {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 280px;           /* adjust as needed */
+  height: 280px;          /* keep equal to width for a perfect circle */
+  border-radius: 50%;     
+  object-fit: cover;      /* zooms/crops so there are no gaps */
+  object-position: center;/* keeps the crop centered */
   display: block;
-  margin: 20px auto;
+  margin: 20px auto;      /* centers image horizontally */
 }
