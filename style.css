@@ -1,9 +1,9 @@
 .profile-photo {
-  width: 220px;
-  height: 220px;
+  width: 280px;
+  height: 280px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: 50% 40%;
+  object-position: 50% 35%; /* moved up slightly */
   display: block;
   margin: 20px auto;
 }
