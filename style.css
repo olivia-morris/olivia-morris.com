@@ -24,14 +24,13 @@ header h1 {
   width: 260px;
   height: 260px;
   border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
+  object-fit: cover;       /* Zooms in and fills the circle */
+  object-position: center; /* Centers the crop */
   display: block;
   margin: 0 auto 2rem;
-
-  /* Zoom effect */
-  transform: scale(1.2);   /* Increase to zoom in more */
+  overflow: hidden;        /* Forces edges to hide */
 }
+
 
 /* Buttons */
 .buttons {
