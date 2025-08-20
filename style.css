@@ -8,3 +8,6 @@
   display: block;
   margin: 20px auto;
 }
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
