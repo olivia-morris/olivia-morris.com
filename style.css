@@ -20,16 +20,17 @@ header h1 {
   margin-bottom: 1.5rem;
   font-weight: 600;
 }
-
-/* Profile Image */
 .profile-photo {
-  width: 260px;                /* Circle size */
-  height: 260px;               /* Must match width */
-  border-radius: 50%;          /* Circular frame */
-  object-fit: cover;           /* Fill circle */
-object-position: center 18%;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
   display: block;
   margin: 0 auto 2rem;
+
+  /* Zoom effect */
+  transform: scale(1.2);   /* Increase to zoom in more */
 }
 
 /* Buttons */
