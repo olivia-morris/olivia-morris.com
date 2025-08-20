@@ -3,7 +3,8 @@
   height: 280px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: 50% 35%; /* moved up slightly */
+  object-position: 50% 35%; /* adjust up/down */
+  transform: scale(1.2);    /* zoom in (1.0 = normal, 1.2 = 20% bigger) */
   display: block;
   margin: 20px auto;
 }
