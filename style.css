@@ -1,1 +1,80 @@
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  background: #ffffff;
+  color: #111;
+  text-align: center;      /* Centers all text */
+  padding: 2rem;
+}
+
+/* Header */
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+/* Profile Image */
+.profile-photo {
+  width: 260px;                /* Circle size */
+  height: 260px;               /* Must match width */
+  border-radius: 50%;          /* Circular frame */
+  object-fit: cover;           /* Fill circle */
+  object-position: center 25%; /* Zoom in more vertically */
+  display: block;
+  margin: 0 auto 2rem;
+}
+
+/* Buttons */
+.buttons {
+  margin-bottom: 2rem;
+}
+.buttons a {
+  display: inline-block;
+  margin: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  background: #111;
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+.buttons a:hover {
+  background: #333;
+}
+
+/* Skills */
+.skills {
+  margin: 2rem auto;
+  max-width: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  /* Center skills */
+  gap: 0.6rem;
+}
+.skills span {
+  background: #f3f3f3;
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
+  font-size: 0.95rem;
+}
+
+/* Work Samples */
+.work-samples {
+  margin: 3rem auto;
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.sample {
+  background: #
 
