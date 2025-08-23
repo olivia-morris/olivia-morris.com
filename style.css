@@ -2,23 +2,80 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   background-color: #f9f9f9;
   text-align: center;
+  color: #333;
 }
 
-/* Container to center content */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
+/* Header styling */
+header {
+  padding: 40px 20px;
 }
 
-/* Circular image style */
-.profile-pic {
-  width: 250px;           /* adjust size as needed */
-  height: 250px
+/* Circular profile photo */
+.profile-photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;      /* ensures the photo zooms/crops nicely */
+  border-radius: 50%;     /* makes it a perfect circle */
+  border: 4px solid #333; /* optional: dark border for emphasis */
+  margin-bottom: 20px;
+}
 
+/* Button container */
+.buttons {
+  margin: 20px 0;
+}
 
+/* Button styles */
+.buttons a {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 12px 20px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+.buttons a:hover {
+  background-color: #555;
+}
+
+/* Skills section */
+.skills {
+  margin: 40px 0;
+}
+
+.skills span {
+  display: inline-block;
+  background: #e0e0e0;
+  padding: 8px 15px;
+  border-radius: 20px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+/* Work samples */
+.work-samples {
+  padding: 40px 20px;
+}
+
+.sample {
+  margin-bottom: 20px;
+}
+
+/* Contact section */
+.contact {
+  margin: 40px 20px;
+}
+
+/* Footer */
+footer {
+  background: #333;
+  color: #fff;
+  padding: 15px;
+}
