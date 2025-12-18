@@ -102,3 +102,6 @@ footer {
 .secondary-button a:hover {
   background-color: #555;
 }
+.secondary-button {
+  margin-top: 25px; /* increase to 30–40px if you want more space */
+}
