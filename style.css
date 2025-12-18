@@ -85,3 +85,20 @@ footer {
   font-size: 16px;
   line-height: 1.7;
 }
+.primary-buttons {
+  margin-bottom: 15px;
+}
+
+.secondary-button a {
+  display: inline-block;
+  padding: 12px 26px;
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: bold;
+}
+
+.secondary-button a:hover {
+  background-color: #555;
+}
