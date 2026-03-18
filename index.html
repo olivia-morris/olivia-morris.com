@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olivia Morris</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── HERO ── */
+    .hero {
+      padding: 80px 0 64px;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .hero-photo {
+      width: 200px;
+      height: 240px;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(8%);
+    }
+
+    .hero-content {
+      padding-top: 8px;
+    }
+
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 32px;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border: 1px solid var(--light-gray);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .hero-link:hover {
+      background: var(--black);
+      border-color: var(--black);
+      color: var(--white);
+    }
+
+    .hero-link svg {
+      width: 14px; height: 14px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* ── DIVIDER ── */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--light-gray);
+      margin: 0;
+    }
+
+    /* ── PROJECTS ── */
+    .projects-section {
+      padding: 64px 0;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--light-gray);
+      border: 1px solid var(--light-gray);
+    }
+
+    .project-card {
+      background: var(--white);
+      padding: 32px 28px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: background 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card:hover {
+      background: var(--warm);
+    }
+
+    .project-card:hover .project-arrow {
+      transform: translate(3px, -3px);
+    }
+
+    .project-type {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    .project-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--black);
+    }
+
+    .project-desc {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .project-arrow {
+      align-self: flex-end;
+      margin-top: 8px;
+      transition: transform 0.2s;
+    }
+
+    .project-arrow svg {
+      width: 16px; height: 16px;
+      fill: none;
+      stroke: var(--gray);
+      stroke-width: 1.5;
+    }
+
+    /* ── EXPERIENCE ── */
+    .experience-section {
+      padding: 64px 0 80px;
+    }
+
+    .exp-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 80px 330px 1fr;
+      gap: 32px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--light-gray);
+      align-items: start;
+    }
+
+    .exp-item:last-child {
+      border-bottom: none;
+    }
+
+    .exp-year {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--gray);
+      letter-spacing: 0.04em;
+      padding-top: 4px;
+    }
+
+    .exp-logo {
+      width: 160px;
+      height: 90px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    /* Per-logo size tuning to visually equalize */
+    .exp-logo[alt="Monica Abrew RE/MAX"]  { width: 320px; height: 180px; }
+    .exp-logo[alt="August Boutique"]      { width: 320px; height: 180px; }
+    .exp-logo[alt="CSU Signal"]           { width: 80px;  height: 80px;  }
+    .exp-logo[alt="Roots & Routes"]       { width: 320px; height: 160px; }
+    .exp-logo[alt="CSU Stanislaus"]       { width: 100px; height: 100px; }
+
+    .exp-role {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 3px;
+    }
+
+    .exp-company {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray);
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
+    }
+
+    .exp-desc {
+      font-size: 13px;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 680px) {
+      .hero { grid-template-columns: 1fr; gap: 32px; }
+      .hero-photo { width: 140px; height: 168px; }
+      .hero-name { font-size: 38px; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .exp-item { grid-template-columns: 60px 1fr; }
+      .exp-logo { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-name">Olivia Morris</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  <div class="container">
+
+    <!-- Hero -->
+    <section class="hero">
+      <img src="images/profile-home.jpg" alt="Olivia Morris" class="hero-photo fade-up">
+      <div class="hero-content">
+        <h1 class="hero-name fade-up">Olivia<br>Morris</h1>
+        <p class="hero-title fade-up">Social Media &amp; Marketing</p>
+        <div class="hero-links fade-up">
+          <a href="mailto:oliviamorris223@gmail.com" class="hero-link">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            Email
+          </a>
+          <a href="https://www.linkedin.com/in/olivia-morris-3b2460342/" target="_blank" class="hero-link">
+            <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            LinkedIn
+          </a>
+          <a href="resume.pdf" target="_blank" class="hero-link">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+            Résumé
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Projects -->
+    <section class="projects-section">
+      <div class="section-label">Projects</div>
+      <div class="projects-grid">
+
+        <a href="https://www.instagram.com/oliviafromscratch/" target="_blank" class="project-card fade-up">
+          <div class="project-type">Brand Build</div>
+          <div class="project-name">@oliviafromscratch</div>
+          <div class="project-desc">A live case study in growing a social media presence from zero.</div>
+          <div class="project-arrow">
+            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+        </a>
+
+        <a href="images/signal-report.png" target="_blank" class="project-card fade-up">
+          <div class="project-type">Audience Insights Report</div>
+          <div class="project-name">Signal Instagram Growth</div>
+          <div class="project-desc">+1,819% views growth over 5 months at CSU's student newspaper.</div>
+          <div class="project-arrow">
+            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+        </a>
+
+        <a href="https://mailchi.mp/e0a8bc76d2c9/youre-invited-join-our-fight-for-water-17441949?e=cd2f438d36" target="_blank" class="project-card fade-up">
+          <div class="project-type">Newsletter</div>
+          <div class="project-name">Roots &amp; Routes</div>
+          <div class="project-desc">Nonprofit newsletter designed and distributed via Mailchimp.</div>
+          <div class="project-arrow">
+            <svg viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Experience & Education -->
+    <section class="experience-section">
+      <div class="section-label">Experience &amp; Education</div>
+      <div class="exp-list">
+
+        <div class="exp-item fade-up">
+          <div class="exp-year">2025–<br>Present</div>
+          <img src="images/logo-monica.png" alt="Monica Abrew RE/MAX" class="exp-logo">
+          <div>
+            <div class="exp-role">Social Media Manager</div>
+            <div class="exp-company">Monica Abrew, RE/MAX</div>
+            <div class="exp-desc">Produce reels, static imagery, and Stories using Meta Business Suite to grow a real estate personal brand on Instagram.</div>
+          </div>
+        </div>
+
+        <div class="exp-item fade-up">
+          <div class="exp-year">2025–<br>Present</div>
+          <img src="images/logo-august.png" alt="August Boutique" class="exp-logo">
+          <div>
+            <div class="exp-role">Marketing Manager</div>
+            <div class="exp-company">August Boutique</div>
+            <div class="exp-desc">Manage Instagram content and live sales scheduling while overseeing Shopify product listings with SEO and theme customization.</div>
+          </div>
+        </div>
+
+        <div class="exp-item fade-up">
+          <div class="exp-year">2025</div>
+          <img src="images/logo-signal.png" alt="CSU Signal" class="exp-logo">
+          <div>
+            <div class="exp-role">Social Media Producer</div>
+            <div class="exp-company">CSU Signal</div>
+            <div class="exp-desc">Created social media content using Adobe Suite and Canva while conducting analytics and leading workshops on social media strategy for journalism students.</div>
+          </div>
+        </div>
+
+        <div class="exp-item fade-up">
+          <div class="exp-year">2024–<br>2025</div>
+          <img src="images/logo-roots.png" alt="Roots & Routes" class="exp-logo">
+          <div>
+            <div class="exp-role">Marketing Intern</div>
+            <div class="exp-company">Roots &amp; Routes Intercultural Collaborations</div>
+            <div class="exp-desc">Supported the nonprofit film's promotion through social media content creation, Facebook and Instagram management, intern recruitment, and newsletter design via Mailchimp.</div>
+          </div>
+        </div>
+
+        <div class="exp-item fade-up">
+          <div class="exp-year">2023–<br>2025</div>
+          <img src="images/logo-csu.png" alt="CSU Stanislaus" class="exp-logo">
+          <div>
+            <div class="exp-role">Bachelor of Arts, Communication Studies</div>
+            <div class="exp-company">California State University, Stanislaus</div>
+            <div class="exp-desc">Honors: magna cum laude</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /container -->
+</div><!-- /page -->
+
+<footer>
+  <a href="https://www.instagram.com/oliviafromscratch/" target="_blank" class="footer-icon" aria-label="Instagram">
+    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+  </a>
+  <a href="https://www.linkedin.com/in/olivia-morris-3b2460342/" target="_blank" class="footer-icon" aria-label="LinkedIn">
+    <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+  </a>
+  <a href="mailto:oliviamorris223@gmail.com" class="footer-icon" aria-label="Email">
+    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+  </a>
+</footer>
+
+</body>
+</html>
