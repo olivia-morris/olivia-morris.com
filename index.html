@@ -166,15 +166,6 @@
       flex-direction: column;
     }
 
-    .exp-item {
-      display: grid;
-      grid-template-columns: 80px 330px 1fr;
-      gap: 32px;
-      padding: 32px 0;
-      border-bottom: 1px solid var(--light-gray);
-      align-items: start;
-    }
-
     .exp-item:last-child {
       border-bottom: none;
     }
@@ -187,19 +178,30 @@
       padding-top: 4px;
     }
 
+    .exp-item {
+      display: grid;
+      grid-template-columns: 80px 330px 1fr;
+      gap: 16px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--light-gray);
+      align-items: center;
+    }
+
     .exp-logo {
       width: 160px;
       height: 90px;
       object-fit: contain;
       object-position: left center;
+      display: block;
+      margin-left: 0;
     }
 
     /* Per-logo size tuning to visually equalize */
-    .exp-logo[alt="Monica Abrew RE/MAX"]  { width: 320px; height: 180px; }
-    .exp-logo[alt="August Boutique"]      { width: 320px; height: 180px; }
-    .exp-logo[alt="CSU Signal"]           { width: 80px;  height: 80px;  }
-    .exp-logo[alt="Roots & Routes"]       { width: 320px; height: 160px; }
-    .exp-logo[alt="CSU Stanislaus"]       { width: 100px; height: 100px; }
+    .exp-logo[alt="Monica Abrew RE/MAX"]  { width: 320px; height: 180px; object-position: left center; }
+    .exp-logo[alt="August Boutique"]      { width: 320px; height: 180px; object-position: left center; }
+    .exp-logo[alt="CSU Signal"]           { width: 80px;  height: 80px;  object-position: left center; }
+    .exp-logo[alt="Roots & Routes"]       { width: 320px; height: 160px; object-position: left center; }
+    .exp-logo[alt="CSU Stanislaus"]       { width: 100px; height: 100px; object-position: left center; }
 
     .exp-role {
       font-size: 15px;
