@@ -166,11 +166,12 @@
       flex-direction: column;
     }
 
+    /* Desktop: year | logo | text — all in one row */
     .exp-item {
       display: grid;
-      grid-template-columns: 72px 220px 1fr;
-      gap: 12px 20px;
-      padding: 36px 0;
+      grid-template-columns: 72px 200px 1fr;
+      gap: 0 28px;
+      padding: 40px 0;
       border-bottom: 1px solid var(--light-gray);
       align-items: center;
     }
@@ -184,36 +185,23 @@
       font-weight: 400;
       color: var(--gray);
       letter-spacing: 0.04em;
-      padding-top: 4px;
-      align-self: center;
     }
 
-    /* Logo container — fixed width column, logos fill it */
-    .exp-logo-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      width: 220px;
-    }
-
+    /* All logos fill the 200px column, scaled proportionally */
     .exp-logo {
       display: block;
-      max-width: 100%;
-      max-height: 120px;
-      width: auto;
-      height: auto;
+      width: 100%;
+      height: 80px;
       object-fit: contain;
       object-position: left center;
     }
 
-    /* Per-logo tuning for visual balance */
-    .exp-logo[alt="Monica Abrew RE/MAX"] { max-height: 100px; }
-    .exp-logo[alt="August Boutique"]     { max-height: 110px; }
-    .exp-logo[alt="CSU Signal"]          { max-height: 80px;  max-width: 80px; }
-    .exp-logo[alt="Roots & Routes"]      { max-height: 100px; }
-    .exp-logo[alt="CSU Stanislaus"]      { max-height: 90px;  max-width: 90px; }
-
-    .exp-text { align-self: center; }
+    /* Per-logo height tuning so they feel visually equal */
+    .exp-logo[alt="Monica Abrew RE/MAX"] { height: 80px; }
+    .exp-logo[alt="August Boutique"]     { height: 80px; }
+    .exp-logo[alt="CSU Signal"]          { height: 72px; width: 72px; }
+    .exp-logo[alt="Roots & Routes"]      { height: 72px; }
+    .exp-logo[alt="CSU Stanislaus"]      { height: 72px; width: 72px; }
 
     .exp-role {
       font-size: 15px;
@@ -248,30 +236,37 @@
 
       .projects-grid { grid-template-columns: 1fr; }
 
-      /* Stack: year on its own line, then logo + text side by side */
+      /* Mobile: year spans top, logo left, text right */
       .exp-item {
-        grid-template-columns: 1fr;
-        gap: 16px;
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        grid-template-rows: auto auto;
+        gap: 8px 16px;
         padding: 28px 0;
       }
 
-      .exp-logo-row {
-        display: flex;
-        align-items: center;
-        gap: 20px;
+      /* Year spans full width on top */
+      .exp-year {
+        grid-column: 1 / -1;
       }
 
-      .exp-logo-wrap {
-        width: 100px;
-        flex-shrink: 0;
+      /* Logo in left column */
+      .exp-logo {
+        height: 60px;
+        width: 100%;
+        object-position: left center;
       }
 
-      .exp-logo { max-height: 70px; }
-      .exp-logo[alt="Monica Abrew RE/MAX"] { max-height: 60px; }
-      .exp-logo[alt="August Boutique"]     { max-height: 65px; }
-      .exp-logo[alt="CSU Signal"]          { max-height: 55px; max-width: 55px; }
-      .exp-logo[alt="Roots & Routes"]      { max-height: 60px; }
-      .exp-logo[alt="CSU Stanislaus"]      { max-height: 55px; max-width: 55px; }
+      .exp-logo[alt="Monica Abrew RE/MAX"] { height: 52px; }
+      .exp-logo[alt="August Boutique"]     { height: 60px; }
+      .exp-logo[alt="CSU Signal"]          { height: 52px; width: 52px; }
+      .exp-logo[alt="Roots & Routes"]      { height: 48px; }
+      .exp-logo[alt="CSU Stanislaus"]      { height: 52px; width: 52px; }
+
+      /* Text in right column */
+      .exp-text {
+        align-self: center;
+      }
     }
   </style>
 </head>
@@ -358,71 +353,51 @@
 
         <div class="exp-item fade-up">
           <div class="exp-year">2026–<br>Present</div>
-          <div class="exp-logo-row">
-            <div class="exp-logo-wrap">
-              <img src="logo-monica.png" alt="Monica Abrew RE/MAX" class="exp-logo">
-            </div>
-            <div class="exp-text">
-              <div class="exp-role">Social Media Manager</div>
-              <div class="exp-company">Monica Abrew, RE/MAX</div>
-              <div class="exp-desc">Produce reels, static imagery, and Stories using Meta Business Suite to grow a real estate personal brand on Instagram.</div>
-            </div>
+          <img src="logo-monica.png" alt="Monica Abrew RE/MAX" class="exp-logo">
+          <div class="exp-text">
+            <div class="exp-role">Social Media Manager</div>
+            <div class="exp-company">Monica Abrew, RE/MAX</div>
+            <div class="exp-desc">Produce reels, static imagery, and Stories using Meta Business Suite to grow a real estate personal brand on Instagram.</div>
           </div>
         </div>
 
         <div class="exp-item fade-up">
           <div class="exp-year">2025–<br>Present</div>
-          <div class="exp-logo-row">
-            <div class="exp-logo-wrap">
-              <img src="logo-august.png" alt="August Boutique" class="exp-logo">
-            </div>
-            <div class="exp-text">
-              <div class="exp-role">Marketing Manager</div>
-              <div class="exp-company">August Boutique</div>
-              <div class="exp-desc">Manage Instagram content and live sales scheduling while overseeing Shopify product listings with SEO and theme customization.</div>
-            </div>
+          <img src="logo-august.png" alt="August Boutique" class="exp-logo">
+          <div class="exp-text">
+            <div class="exp-role">Marketing Manager</div>
+            <div class="exp-company">August Boutique</div>
+            <div class="exp-desc">Manage Instagram content and live sales scheduling while overseeing Shopify product listings with SEO and theme customization.</div>
           </div>
         </div>
 
         <div class="exp-item fade-up">
           <div class="exp-year">2025</div>
-          <div class="exp-logo-row">
-            <div class="exp-logo-wrap">
-              <img src="logo-signal.png" alt="CSU Signal" class="exp-logo">
-            </div>
-            <div class="exp-text">
-              <div class="exp-role">Social Media Producer</div>
-              <div class="exp-company">CSU Signal</div>
-              <div class="exp-desc">Created social media content using Adobe Suite and Canva while conducting analytics and leading workshops on social media strategy for journalism students.</div>
-            </div>
+          <img src="logo-signal.png" alt="CSU Signal" class="exp-logo">
+          <div class="exp-text">
+            <div class="exp-role">Social Media Producer</div>
+            <div class="exp-company">CSU Signal</div>
+            <div class="exp-desc">Created social media content using Adobe Suite and Canva while conducting analytics and leading workshops on social media strategy for journalism students.</div>
           </div>
         </div>
 
         <div class="exp-item fade-up">
           <div class="exp-year">2024–<br>2025</div>
-          <div class="exp-logo-row">
-            <div class="exp-logo-wrap">
-              <img src="logo-roots.png" alt="Roots & Routes" class="exp-logo">
-            </div>
-            <div class="exp-text">
-              <div class="exp-role">Marketing Intern</div>
-              <div class="exp-company">Roots &amp; Routes Intercultural Collaborations</div>
-              <div class="exp-desc">Supported the nonprofit film's promotion through social media content creation, Facebook and Instagram management, intern recruitment, and newsletter design via Mailchimp.</div>
-            </div>
+          <img src="logo-roots.png" alt="Roots & Routes" class="exp-logo">
+          <div class="exp-text">
+            <div class="exp-role">Marketing Intern</div>
+            <div class="exp-company">Roots &amp; Routes Intercultural Collaborations</div>
+            <div class="exp-desc">Supported the nonprofit film's promotion through social media content creation, Facebook and Instagram management, intern recruitment, and newsletter design via Mailchimp.</div>
           </div>
         </div>
 
         <div class="exp-item fade-up">
           <div class="exp-year">2023–<br>2025</div>
-          <div class="exp-logo-row">
-            <div class="exp-logo-wrap">
-              <img src="logo-csu.png" alt="CSU Stanislaus" class="exp-logo">
-            </div>
-            <div class="exp-text">
-              <div class="exp-role">Bachelor of Arts, Communication Studies</div>
-              <div class="exp-company">California State University, Stanislaus</div>
-              <div class="exp-desc">Honors: magna cum laude</div>
-            </div>
+          <img src="logo-csu.png" alt="CSU Stanislaus" class="exp-logo">
+          <div class="exp-text">
+            <div class="exp-role">Bachelor of Arts, Communication Studies</div>
+            <div class="exp-company">California State University, Stanislaus</div>
+            <div class="exp-desc">Honors: magna cum laude</div>
           </div>
         </div>
 
