@@ -10,89 +10,111 @@
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-NXQJZR52');</script>
   <!-- End Google Tag Manager -->
-  <title>About — Olivia Morris</title>
+  <title>Thanks — Olivia Morris</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    .about-section {
+    .contact-section {
       padding: 80px 0 100px;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
       align-items: start;
     }
-
-    .about-photo {
-      width: 100%;
-      aspect-ratio: 3/4;
-      object-fit: cover;
-      object-position: center top;
-    }
-
-    .about-content {
-      padding-top: 12px;
-    }
-
-    .about-heading {
+    .contact-left h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: 48px;
       font-weight: 300;
       line-height: 1.1;
       color: var(--black);
-      margin-bottom: 32px;
-    }
-
-    .about-text {
-      font-size: 15px;
-      line-height: 1.8;
-      color: var(--text);
-      margin-bottom: 24px;
-    }
-
-    .skills-label {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--gray);
       margin-bottom: 16px;
-      margin-top: 16px;
     }
-
-    .skills-grid {
+    .contact-left p {
+      font-size: 15px;
+      color: var(--gray);
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+    .contact-details {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 12px;
+      margin-bottom: 40px;
     }
-
-    .skill-row {
+    .contact-detail {
       display: flex;
-      flex-direction: column;
-      gap: 4px;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s;
     }
-
-    .skill-name {
-      font-size: 12px;
-      font-weight: 500;
-      letter-spacing: 0.06em;
+    .contact-detail:hover {
       color: var(--black);
     }
-
-    .skill-tools {
-      font-size: 12px;
+    .contact-detail svg {
+      width: 16px; height: 16px;
+      fill: var(--gray);
+      flex-shrink: 0;
+    }
+    .form-embed {
+      width: 100%;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      max-width: 520px;
+    }
+    .contact-form label {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 13px;
+      letter-spacing: 0.04em;
       color: var(--gray);
     }
-
+    .contact-form input,
+    .contact-form textarea {
+      font-family: 'Jost', sans-serif;
+      font-size: 16px;
+      color: var(--text);
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid var(--light-gray);
+      padding: 10px 0;
+      border-radius: 0;
+      resize: vertical;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-bottom-color: var(--black);
+    }
+    .contact-form button {
+      align-self: flex-start;
+      font-family: 'Jost', sans-serif;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      background: var(--black);
+      border: 1px solid var(--black);
+      padding: 14px 28px;
+      cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+    .contact-form button:hover,
+    .contact-form button:focus-visible {
+      background: transparent;
+      color: var(--black);
+    }
     @media (max-width: 680px) {
-      .about-section {
+      .contact-section {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 48px;
         padding: 60px 0 80px;
       }
-      .about-photo {
-        aspect-ratio: 4/3;
-        width: 100%;
-      }
-      .about-heading { font-size: 36px; }
+      .contact-left h2 { font-size: 36px; }
     }
   </style>
 </head>
@@ -106,50 +128,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="index.html" class="nav-name">Olivia Morris</a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
-    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
   </ul>
 </nav>
 
 <div class="page">
   <div class="container">
-    <section class="about-section">
+    <section class="contact-section">
 
-      <img src="Livy2 2.jpg" alt="Olivia Morris" class="about-photo fade-up">
-
-      <div class="about-content">
-        <div class="section-label">About Me</div>
-        <h2 class="about-heading fade-up">Olivia Morris</h2>
-        <p class="about-text fade-up">
-          Between real estate, retail, and media, I've shot reels on-site, written SEO-driven copy, and translated analytics into actionable strategy.
-        </p>
-        <p class="about-text fade-up">
-          Based in the Central Valley, available everywhere.
-        </p>
-
-        <div class="skills-label">Tools &amp; Skills</div>
-        <div class="skills-grid fade-up">
-          <div class="skill-row">
-            <div class="skill-name">Content Creation</div>
-            <div class="skill-tools">Adobe Express, Photoshop, Lightroom, Canva, CapCut</div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-name">Analytics &amp; Ads</div>
-            <div class="skill-tools">Meta Business Suite, Meta Ads, Google Analytics</div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-name">Scheduling &amp; Email</div>
-            <div class="skill-tools">Hootsuite, Mailchimp</div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-name">E-commerce</div>
-            <div class="skill-tools">Shopify (listings, SEO, theme customization)</div>
-          </div>
-          <div class="skill-row">
-            <div class="skill-name">AI Tools</div>
-            <div class="skill-tools">ChatGPT, Claude, Gemini</div>
-          </div>
-        </div>
+      <div class="contact-left fade-up">
+        <div class="section-label">Message sent</div>
+        <h2>Thank<br>you.</h2>
+        <p>I read every message and usually reply within a day or two. In the meantime, you can browse my <a href="index.html#work">work samples</a> or download my <a href="CV_OliviaMorris.pdf" target="_blank">résumé</a>.</p>
       </div>
 
     </section>
