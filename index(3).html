@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-NXQJZR52');</script>
+  <!-- End Google Tag Manager -->
+  <title>Olivia Morris | Social Media &amp; Marketing</title>
+  <meta name="description" content="Olivia Morris, social media and marketing in California's Central Valley. Reels, content editing, and Instagram growth for real estate, retail, and media.">
+  <link rel="canonical" href="https://olivia-morris.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Olivia Morris | Social Media &amp; Marketing">
+  <meta property="og:description" content="Olivia Morris, social media and marketing in California's Central Valley. Reels, content editing, and Instagram growth for real estate, retail, and media.">
+  <meta property="og:url" content="https://olivia-morris.com/">
+  <meta property="og:image" content="https://olivia-morris.com/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── HERO ── */
+    .hero {
+      padding: 80px 0 64px;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .hero-photo {
+      width: 200px;
+      height: 240px;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(8%);
+    }
+
+    .hero-content {
+      padding-top: 8px;
+    }
+
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gray);
+      margin-bottom: 32px;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 18px;
+      border: 1px solid var(--light-gray);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .hero-link:hover {
+      background: var(--black);
+      border-color: var(--black);
+      color: var(--white);
+    }
+
+    .hero-link svg {
+      width: 14px; height: 14px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+
+    /* ── DIVIDER ── */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--light-gray);
+      margin: 0;
+    }
+
+    /* ── REEL CAROUSEL ── */
+    .projects-section {
+      padding: 64px 0;
+    }
+
+    .reel-carousel {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .reel-card {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      cursor: pointer;
+      aspect-ratio: 9/16;
+      background: #111;
+    }
+
+    .reel-thumb {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.3s;
+    }
+
+    .reel-card video,
+    .reel-card iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+      border: none;
+    }
+
+    .reel-card.playing .reel-thumb { opacity: 0; }
+    .reel-card.playing video,
+    .reel-card.playing iframe { display: block; }
+    .reel-card.playing .reel-play-btn { opacity: 0; pointer-events: none; }
+
+    .reel-play-btn {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.2s;
+    }
+
+    .reel-play-btn svg {
+      width: 52px; height: 52px;
+      fill: white;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+      transition: transform 0.2s;
+    }
+
+    .reel-card:hover .reel-play-btn svg {
+      transform: scale(1.1);
+    }
+
+    .reel-label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 40px 14px 14px;
+      background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%);
+      color: white;
+      pointer-events: none;
+    }
+
+    .reel-label-type {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-bottom: 4px;
+    }
+
+    .reel-label-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    @media (max-width: 680px) {
+      .reel-carousel {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 8px;
+      }
+      .reel-card {
+        flex-shrink: 0;
+        width: 72vw;
+        scroll-snap-align: center;
+      }
+    }
+
+    /* ── EXPERIENCE ── */
+    .experience-section {
+      padding: 64px 0 80px;
+    }
+
+    .exp-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Desktop: year | logo | text — all in one row */
+    .exp-item {
+      display: grid;
+      grid-template-columns: 72px 200px 1fr;
+      gap: 0 28px;
+      padding: 40px 0;
+      border-bottom: 1px solid var(--light-gray);
+      align-items: center;
+    }
+
+    .exp-item:last-child {
+      border-bottom: none;
+    }
+
+    .exp-year {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--gray);
+      letter-spacing: 0.04em;
+    }
+
+    /* All logos fill the 200px column, scaled proportionally */
+    .exp-logo {
+      display: block;
+      width: 100%;
+      height: 80px;
+      object-fit: contain;
+      object-position: left center;
+    }
+
+    /* Per-logo height tuning so they feel visually equal */
+    .exp-logo[alt="Monica Abrew RE/MAX"] { height: 80px; }
+    .exp-logo[alt="August Boutique"]     { height: 80px; }
+    .exp-logo[alt="CSU Signal"]          { height: 72px; width: 72px; }
+    .exp-logo[alt="Roots & Routes"]      { height: 72px; }
+    .exp-logo[alt="CSU Stanislaus"]      { height: 72px; width: 72px; }
+
+    .exp-role {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 3px;
+    }
+
+    .exp-company {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray);
+      margin-bottom: 8px;
+      letter-spacing: 0.04em;
+    }
+
+    .exp-desc {
+      font-size: 13px;
+      color: #5d5d58;
+      line-height: 1.6;
+    }
+
+    .exp-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      color: var(--black);
+      text-decoration: none;
+      border-bottom: 1px solid var(--black);
+      padding-bottom: 1px;
+    }
+    .exp-link:hover { opacity: 0.6; }
+
+    .exp-quote {
+      margin-top: 14px;
+      padding-left: 14px;
+      border-left: 2px solid var(--light-gray);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 17px;
+      line-height: 1.45;
+      color: var(--text);
+    }
+    .exp-quote cite {
+      display: block;
+      margin-top: 6px;
+      font-family: 'Jost', sans-serif;
+      font-style: normal;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      color: var(--gray);
+    }
+
+    /* ── MOBILE ── */
+    @media (max-width: 680px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 48px 0 48px;
+      }
+      .hero-photo { width: 140px; height: 168px; }
+      .hero-name { font-size: 38px; }
+
+      .projects-grid { grid-template-columns: 1fr; }
+
+      /* Mobile: year spans top, logo left, text right */
+      .exp-item {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        grid-template-rows: auto auto;
+        gap: 8px 16px;
+        padding: 28px 0;
+      }
+
+      /* Year spans full width on top */
+      .exp-year {
+        grid-column: 1 / -1;
+      }
+
+      /* Logo in left column */
+      .exp-logo {
+        height: 60px;
+        width: 100%;
+        object-position: left center;
+      }
+
+      .exp-logo[alt="Monica Abrew RE/MAX"] { height: 52px; }
+      .exp-logo[alt="August Boutique"]     { height: 60px; }
+      .exp-logo[alt="CSU Signal"]          { height: 52px; width: 52px; }
+      .exp-logo[alt="Roots & Routes"]      { height: 48px; }
+      .exp-logo[alt="CSU Stanislaus"]      { height: 52px; width: 52px; }
+
+      /* Text in right column */
+      .exp-text {
+        align-self: center;
+      }
+    }
+    .footer-privacy {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      color: var(--gray);
+      text-decoration: none;
+      margin-left: 8px;
+    }
+    .footer-privacy:hover { color: var(--black); }
+  </style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXQJZR52"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<nav>
+  <a href="index.html" class="nav-name">Olivia Morris</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+  <div class="container">
+
+    <!-- Hero -->
+    <section class="hero">
+      <img src="img/hero.webp" width="200" height="240" alt="Olivia Morris" class="hero-photo fade-up">
+      <div class="hero-content">
+        <h1 class="hero-name fade-up">Olivia<br>Morris</h1>
+        <p class="hero-title fade-up">Social Media &amp; Marketing</p>
+        <div class="hero-links fade-up">
+          <a href="mailto:oliviamorris223@gmail.com" class="hero-link">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            Email
+          </a>
+          <a href="https://www.linkedin.com/in/olivia-morris-3b2460342/" target="_blank" class="hero-link">
+            <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+            LinkedIn
+          </a>
+          <a href="CV_OliviaMorris.pdf" target="_blank" class="hero-link" id="resume-download">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm4 18H6V4h7v5h5v11z"/></svg>
+            Résumé
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- Reels -->
+    <section class="projects-section" id="work">
+      <div class="section-label">Work Samples</div>
+      <div class="reel-carousel">
+
+        <!-- Reel 1: Home Tour -->
+        <div class="reel-card fade-up" onclick="playReel(this)">
+          <img src="img/reel-gantry.webp" loading="lazy" alt="Home Tour" class="reel-thumb">
+          <iframe src="https://player.vimeo.com/video/1185644165?autoplay=1&loop=1&muted=0&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          <div class="reel-play-btn">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="reel-label">
+            <div class="reel-label-type">Real Estate · Monica Abrew</div>
+            <div class="reel-label-title">2517 Gantry Drive</div>
+          </div>
+        </div>
+
+        <!-- Reel 2: Buyer's Agent 101 -->
+        <div class="reel-card fade-up" onclick="playReel(this)">
+          <img src="img/reel-buyers-agent.webp" loading="lazy" alt="Buyer's Agent 101" class="reel-thumb">
+          <iframe src="https://player.vimeo.com/video/1185716040?autoplay=1&loop=1&muted=0&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          <div class="reel-play-btn">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="reel-label">
+            <div class="reel-label-type">Real Estate · Monica Abrew</div>
+            <div class="reel-label-title">Buyer's Agent 101</div>
+          </div>
+        </div>
+
+        <!-- Reel 3: Women's History Month -->
+        <div class="reel-card fade-up" onclick="playReel(this)">
+          <img src="img/reel-whm.webp" loading="lazy" alt="Women's History Month" class="reel-thumb">
+          <iframe src="https://player.vimeo.com/video/1185713611?autoplay=1&loop=1&muted=0&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          <div class="reel-play-btn">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="reel-label">
+            <div class="reel-label-type">Editorial · CSU Signal</div>
+            <div class="reel-label-title">CSU Signal Celebrates Women's History Month</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <script>
+      function playReel(card) {
+        if (!card.querySelector('iframe')) return;
+        if (card.classList.contains('playing')) {
+          card.classList.remove('playing');
+        } else {
+          document.querySelectorAll('.reel-card.playing').forEach(c => c.classList.remove('playing'));
+          card.classList.add('playing');
+        }
+      }
+    </script>
+
+    <hr class="section-divider">
+
+    <!-- Experience & Education -->
+    <section class="experience-section">
+      <div class="section-label">Experience &amp; Education</div>
+      <div class="exp-list">
+
+        <div class="exp-item fade-up">
+          <div class="exp-year">March 2026–<br>May 2026</div>
+          <img src="img/logo-monica.webp" loading="lazy" alt="Monica Abrew RE/MAX" class="exp-logo">
+          <div class="exp-text">
+            <div class="exp-role">Social Media Manager</div>
+            <div class="exp-company">Monica Abrew, RE/MAX</div>
+            <div class="exp-desc">Edited Reels for a Central Valley realtor's personal brand, with top Reels reaching 5.3K views. Also produced static posts and Stories in Meta Business Suite.</div>
+          </div>
+        </div>
+
+        <div class="exp-item fade-up">
+          <div class="exp-year">August 2025–<br>May 2026</div>
+          <img src="img/logo-august.webp" loading="lazy" alt="August Boutique" class="exp-logo">
+          <div class="exp-text">
+            <div class="exp-role">Marketing Manager</div>
+            <div class="exp-company">August Boutique</div>
+            <div class="exp-desc">Shot, modeled, and edited product Reels, including outfit-change transition edits; managed live-sale scheduling and wrote SEO-optimized Shopify listings with theme customization.</div>
+          </div>
+        </div>
+
+        <div class="exp-item fade-up">
+          <div class="exp-year">2025</div>
+          <img src="img/logo-signal.webp" loading="lazy" alt="CSU Signal" class="exp-logo">
+          <div class="exp-text">
+            <div class="exp-role">Social Media Producer</div>
+            <div class="exp-company">CSU Signal</div>
+            <div class="exp-desc">Grew Signal's Instagram views to 225.9K (+1,819%) and reach to 35.2K (+278%) in five months by shifting to event-based, community-focused Reels. Led social media strategy workshops for journalism students.</div>
+            <a href="img/signal-report.webp" target="_blank" rel="noopener" class="exp-link" id="signal-report">View growth report</a>
+          </div>
+        </div>
+
+        <div class="exp-item fade-up">
+          <div class="exp-year">2024–<br>2025</div>
+          <img src="img/logo-roots.webp" loading="lazy" alt="Roots & Routes" class="exp-logo">
+          <div class="exp-text">
+            <div class="exp-role">Marketing Intern</div>
+            <div class="exp-company">Roots &amp; Routes Intercultural Collaborations</div>
+            <div class="exp-desc">Supported the nonprofit film's promotion through social media content creation, Facebook and Instagram management, intern recruitment, and newsletter design via Mailchimp.</div>
+            <blockquote class="exp-quote">“I was impressed by Olivia's ability to lead a diverse, global team of interns with both a high level of organization and compassion.”<cite>Julianne A. Hazlewood, Ph.D., Co-Founder &amp; Executive Director</cite></blockquote>
+          </div>
+        </div>
+
+        <div class="exp-item fade-up">
+          <div class="exp-year">2023–<br>2025</div>
+          <img src="img/logo-csu.webp" loading="lazy" alt="CSU Stanislaus" class="exp-logo">
+          <div class="exp-text">
+            <div class="exp-role">Bachelor of Arts, Communication Studies</div>
+            <div class="exp-company">California State University, Stanislaus</div>
+            <div class="exp-desc">Honors: magna cum laude</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /container -->
+</div><!-- /page -->
+
+<footer>
+  <a href="https://www.instagram.com/oliviafromscratch/" target="_blank" class="footer-icon" aria-label="Instagram">
+    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+  </a>
+  <a href="https://www.linkedin.com/in/olivia-morris-3b2460342/" target="_blank" class="footer-icon" aria-label="LinkedIn">
+    <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+  </a>
+  <a href="mailto:oliviamorris223@gmail.com" class="footer-icon" aria-label="Email">
+    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+  </a>
+  <a href="privacy.html" class="footer-privacy">Privacy</a>
+</footer>
+
+</body>
+</html>
